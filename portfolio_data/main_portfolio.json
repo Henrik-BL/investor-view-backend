@@ -6,23 +6,28 @@
       "account": "Avanza"
     },
     {
-      "ticker": "APP",
-      "quantity": 52,
+      "ticker": "BE",
+      "quantity": 26,
       "account": "Avanza"
     },
     {
       "ticker": "PLTR",
-      "quantity": 392,
+      "quantity": 536,
       "account": "Avanza"
     },
     {
       "ticker": "MU",
-      "quantity": 44,
+      "quantity": 45,
+      "account": "Avanza"
+    },
+    {
+      "ticker": "SNDK",
+      "quantity": 12,
       "account": "Avanza"
     },
     {
       "ticker": "SHT-B.ST",
-      "quantity": 1520,
+      "quantity": 618,
       "account": "Avanza"
     },
     {
