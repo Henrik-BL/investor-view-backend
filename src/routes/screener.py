@@ -2,8 +2,8 @@ from flask import Blueprint
 from flask import request, jsonify, Response
 import json
 
-from buy_sell_signals_service import BuySellSignalsService
-from extensions import hcnb_stock_data_app
+from src.buy_sell_signals_service import BuySellSignalsService
+from src.extensions import hcnb_stock_data_app
 
 
 screener_bp = Blueprint('screener', __name__, url_prefix='/api/screener')
@@ -22,7 +22,7 @@ def add_ticker():
         return jsonify({"Message": "Ticker already exists"}), 400
 
     try:
-        hcnb_stock_data.get_stock_data(ticker_input)
+        hcnb_stock_data_app.get_stock_data(ticker_input)
     except:
         return jsonify({"Message": f"Invalid ticker"}), 400
 
@@ -30,10 +30,10 @@ def add_ticker():
 
 @screener_bp.route('/screener_list', methods=['GET'])
 def screener_list():
-    tickers = hcnb_stock_data.get_all_tickers()
+    tickers = hcnb_stock_data_app.get_all_tickers()
     screener_items = []
     for ticker in tickers:
-        stock_data = hcnb_stock_data.get_stock_data(ticker, False)
+        stock_data = hcnb_stock_data_app.get_stock_data(ticker, False)
 
         screener_items.append({
             "ticker": stock_data.ticker,
@@ -62,15 +62,15 @@ def update_data():
             requested_tickers = [t.strip() for t in tickers_param.split(',') if t.strip()]
 
     def event_stream():
-        hcnb_stock_data.update_limit_hours = 1
-        tickers = requested_tickers if requested_tickers else hcnb_stock_data.get_all_tickers()
+        hcnb_stock_data_app.update_limit_hours = 1
+        tickers = requested_tickers if requested_tickers else hcnb_stock_data_app.get_all_tickers()
         total = len(tickers)
 
         yield f"data: {json.dumps({'status': 'started', 'total': total})}\n\n"
 
         for index, ticker in enumerate(tickers, start=1):
             try:
-                hcnb_stock_data.get_stock_data(ticker, True)
+                hcnb_stock_data_app.get_stock_data(ticker, True)
                 payload = {
                     "status": "progress",
                     "current": index,
@@ -109,14 +109,14 @@ def update_ticker():
     if not ticker_input:
         return jsonify({"Message": "No ticker provided"}), 400
 
-    existing_tickers = hcnb_stock_data.get_all_tickers()
+    existing_tickers = hcnb_stock_data_app.get_all_tickers()
 
     if ticker_input.upper() not in [ticker.upper() for ticker in existing_tickers]:
         return jsonify({"Message": "Invalid ticker"}), 400
 
     try:
-        hcnb_stock_data.update_limit_hours = 0
-        hcnb_stock_data.get_stock_data(ticker_input, True)
+        hcnb_stock_data_app.update_limit_hours = 0
+        hcnb_stock_data_app.get_stock_data(ticker_input, True)
     except Exception as exc:
         return jsonify({"Message": f"Failed to update ticker: {str(exc)}"}), 500
 
@@ -129,13 +129,13 @@ def fetch_stock_data():
     if not ticker_input:
         return jsonify({"Message": "No ticker provided"}), 400
 
-    existing_tickers = hcnb_stock_data.get_all_tickers()
+    existing_tickers = hcnb_stock_data_app.get_all_tickers()
 
     if ticker_input.upper() not in [ticker.upper() for ticker in existing_tickers]:
         return jsonify({"Message": "Invalid ticker"}), 400
 
-    stock_data = hcnb_stock_data.get_stock_data(ticker_input, False)
+    stock_data = hcnb_stock_data_app.get_stock_data(ticker_input, False)
     json_response = stock_data.__dict__
-    buy_sell_signals = BuySellSignalsService(hcnb_stock_data)
+    buy_sell_signals = BuySellSignalsService(hcnb_stock_data_app)
     json_response['buy_sell_signals'] = buy_sell_signals.get_buy_sell_signal(stock_data)
     return jsonify(json_response), 200

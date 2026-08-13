@@ -2,9 +2,9 @@ import os
 from flask import Flask, jsonify, send_from_directory
 from flask_cors import CORS
 
-from routes.dividend_portfolio import dividend_portfolio_bp
-from routes.portfolio import portfolio_bp
-from routes.screener import screener_bp
+from src.routes.dividend_portfolio import dividend_portfolio_bp
+from src.routes.portfolio import portfolio_bp
+from src.routes.screener import screener_bp
 
 cors_origins = os.environ.get("CORS_ORIGINS", "http://localhost:3000,http://localhost:5173,http://localhost:30080,http://investor-view-frontend:80,http://investor-view-frontend").split(",")
 serve_frontend = os.environ.get("SERVE_FRONTEND", "false").lower() in ["1", "true", "yes"]

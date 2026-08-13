@@ -1,8 +1,8 @@
 from flask import Blueprint, jsonify
 from pathlib import Path
 
-from extensions import hcnb_stock_data_app
-from main_portfolio_service import MainPortfolioService
+from src.extensions import hcnb_stock_data_app
+from src.main_portfolio_service import MainPortfolioService
 
 portfolio_bp = Blueprint('portfolio', __name__, url_prefix='/api/portfolio')
 

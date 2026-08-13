@@ -1,7 +1,7 @@
 from flask import Blueprint, jsonify
 
-from dividend_portfolio_service import DividendPortfolioService
-from extensions import hcnb_stock_data_app
+from src.dividend_portfolio_service import DividendPortfolioService
+from src.extensions import hcnb_stock_data_app
 
 dividend_portfolio_bp = Blueprint('dividend_portfolio', __name__, url_prefix='/api/dividend-portfolio')
 

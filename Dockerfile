@@ -1,21 +1,32 @@
+# Build stage - clone and prepare dependencies
+FROM python:3.12-slim AS builder
+
+RUN apt-get update && apt-get install -y git && rm -rf /var/lib/apt/lists/*
+
+RUN git clone https://github.com/Henrik-BL/hcnb-stock-data /opt/hcnb-stock-data
+
+# Final stage - minimal production image
 FROM python:3.12-slim
 
 WORKDIR /app
 
-COPY backend/requirements.txt ./backend/
-RUN pip install --no-cache-dir -r backend/requirements.txt
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
 
-COPY backend/ ./backend/
-COPY backend/_local_hcnb_stock_data /tmp/local_hcnb_stock_data
-RUN echo "Installing local hcnb_stock_data if present" && \
-    if [ -d /tmp/local_hcnb_stock_data ] && { [ -f /tmp/local_hcnb_stock_data/setup.py ] || [ -f /tmp/local_hcnb_stock_data/pyproject.toml ]; }; then \
-        pip install --no-cache-dir -e /tmp/local_hcnb_stock_data; \
+COPY --from=builder /opt/hcnb-stock-data /opt/hcnb-stock-data
+RUN if [ -f /opt/hcnb-stock-data/setup.py ] || [ -f /opt/hcnb-stock-data/pyproject.toml ]; then \
+        pip install --no-cache-dir -e /opt/hcnb-stock-data; \
     fi
 
+COPY app.py ./
+COPY src/ ./src/
+COPY portfolio_data/ ./portfolio_data/
+
+
 ENV PYTHONUNBUFFERED=1
-ENV FLASK_APP=backend.app
+ENV FLASK_APP=app
 ENV MONGODB_URI=mongodb://host.docker.internal:27017
 
-EXPOSE 5000
+EXPOSE 5010
 
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "backend.app:app", "--workers", "4", "--threads", "2"]
+CMD ["gunicorn", "--bind", "0.0.0.0:5010", "app:app", "--workers", "4", "--threads", "2"]

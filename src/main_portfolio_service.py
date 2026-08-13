@@ -4,7 +4,7 @@ from pathlib import Path
 from hcnb_stock_data.currency_service import CurrencyService
 from hcnb_stock_data.hcnb_stock_data import HcnbStockData
 
-from buy_sell_signals_service import BuySellSignalsService
+from src.buy_sell_signals_service import BuySellSignalsService
 
 
 class MainPortfolioService:

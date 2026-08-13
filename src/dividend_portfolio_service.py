@@ -4,7 +4,7 @@ from pathlib import Path
 from hcnb_stock_data.currency_service import CurrencyService
 from hcnb_stock_data.hcnb_stock_data import HcnbStockData
 
-from tax_calculator import TaxCalculator
+from src.tax_calculator import TaxCalculator
 
 
 class DividendPortfolioService:
