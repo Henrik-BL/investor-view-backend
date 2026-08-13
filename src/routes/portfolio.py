@@ -1,8 +1,8 @@
 from flask import Blueprint, jsonify
 from pathlib import Path
 
-from src.extensions import hcnb_stock_data_app
-from src.main_portfolio_service import MainPortfolioService
+from ..extensions import hcnb_stock_data_app
+from ..main_portfolio_service import MainPortfolioService
 
 portfolio_bp = Blueprint('portfolio', __name__, url_prefix='/api/portfolio')
 
@@ -14,4 +14,3 @@ def portfolio_overview():
     main_portfolio_service = MainPortfolioService(hcnb_stock_data_app)
     portfolio_overview_json = main_portfolio_service.get_portfolio_overview()
     return jsonify(portfolio_overview_json), 200
-

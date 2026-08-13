@@ -1,12 +1,11 @@
 import json
 from pathlib import Path
 
-from hcnb_stock_data import hcnb_stock_data
 from hcnb_stock_data.currency_service import CurrencyService
 from hcnb_stock_data.hcnb_stock_data import HcnbStockData
 
-from extensions import hcnb_stock_data_app
-from src.buy_sell_signals_service import BuySellSignalsService
+from .extensions import hcnb_stock_data_app
+from .buy_sell_signals_service import BuySellSignalsService
 
 
 class MainPortfolioService:
@@ -118,8 +117,3 @@ class MainPortfolioService:
 
         return aggregated
 
-
-
-# main_portfolio_service = MainPortfolioService(HcnbStockData())
-# dd = main_portfolio_service.get_portfolio_overview()
-# print("debug")

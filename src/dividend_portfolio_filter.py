@@ -27,8 +27,3 @@ class DividendPortfolioFilter:
                     result_list.append([ticker, stock_data.name])
 
         return result_list
-
-
-# dividend_portfolio_filter = DividendPortfolioFilter(HcnbStockData())
-# print(dividend_portfolio_filter.get_list_matching_filters())
-

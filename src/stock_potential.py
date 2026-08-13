@@ -20,4 +20,3 @@ class StockPotential:
             "all_time_high_potential": all_time_high_potential,
             "average_potential": average_potential
         }
-

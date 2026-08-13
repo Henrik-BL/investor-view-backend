@@ -24,6 +24,7 @@ COPY portfolio_data/ ./portfolio_data/
 
 
 ENV PYTHONUNBUFFERED=1
+ENV PYTHONPATH=/app
 ENV FLASK_APP=app
 ENV MONGODB_URI=mongodb://host.docker.internal:27017
 

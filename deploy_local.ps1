@@ -1,5 +1,5 @@
 # Build --no-cache
-docker build . -t investor-view-backend:local
+docker build . -t investor-view-backend:local --no-cache
 
 # Stop and remove existing container
 docker stop investor-view-backend 2>$null
