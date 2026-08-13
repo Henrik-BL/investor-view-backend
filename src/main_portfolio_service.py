@@ -1,9 +1,11 @@
 import json
 from pathlib import Path
 
+from hcnb_stock_data import hcnb_stock_data
 from hcnb_stock_data.currency_service import CurrencyService
 from hcnb_stock_data.hcnb_stock_data import HcnbStockData
 
+from extensions import hcnb_stock_data_app
 from src.buy_sell_signals_service import BuySellSignalsService
 
 
@@ -17,8 +19,11 @@ class MainPortfolioService:
     def get_portfolio_overview(self):
         total_value = 0
         portfolio_holding = self._load_portfolio_holdings()
+        existing_tickers = hcnb_stock_data_app.get_all_tickers()
 
         for holding in portfolio_holding:
+            if holding['ticker'] not in existing_tickers:
+                self.hcnb_stock_data.get_stock_data(holding['ticker'], True)
             stock_data = self.hcnb_stock_data.get_stock_data(holding['ticker'], False)
             holding_value = stock_data.price * holding['quantity']
             holding_value_sek = round(self.currency_service.convert(holding_value, stock_data.currency, "SEK"))
@@ -115,6 +120,6 @@ class MainPortfolioService:
 
 
 
-# main_portfolio_service = MainPortfolioService(HcnbStockData())
-# dd = main_portfolio_service.get_portfolio_overview()
-# print("debug")
+main_portfolio_service = MainPortfolioService(HcnbStockData())
+dd = main_portfolio_service.get_portfolio_overview()
+print("debug")
