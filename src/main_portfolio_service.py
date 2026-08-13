@@ -120,6 +120,6 @@ class MainPortfolioService:
 
 
 
-main_portfolio_service = MainPortfolioService(HcnbStockData())
-dd = main_portfolio_service.get_portfolio_overview()
-print("debug")
+# main_portfolio_service = MainPortfolioService(HcnbStockData())
+# dd = main_portfolio_service.get_portfolio_overview()
+# print("debug")
