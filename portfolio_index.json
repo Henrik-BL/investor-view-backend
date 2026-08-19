@@ -1,0 +1,488 @@
+{
+  "holdings": [
+    {
+      "accounts": [
+        "Avanza",
+        "Montrose"
+      ],
+      "buy_sell_signals": {
+        "buy_points": 0,
+        "buy_points_calculated": [
+        ],
+        "neutral_or_missing_data": [
+          [
+            "RSI 14 neutral",
+            68.14
+          ],
+          [
+            "SMA 225 diff neutral",
+            68.14
+          ]
+        ],
+        "sell_points": 1,
+        "sell_points_calculated": [
+          [
+            "Fear \u0026 Greed Index Sell 1",
+            64.97
+          ]
+        ]
+      },
+      "holding_value_percentage": 39.49,
+      "holding_value_sek": 911428,
+      "industry": "Software - Infrastructure",
+      "quantity": 550,
+      "sector": "Technology",
+      "stock_price_potential": {
+        "all_time_high_potential": {
+          "all_time_high": 207.52,
+          "percentage": 19.24
+        },
+        "average_potential": 9.72,
+        "fifty_two_week_high_potential": {
+          "fifty_two_week_high": 207.52,
+          "percentage": 19.24
+        },
+        "percentage_list": [
+          19.24,
+          19.24,
+          46.52,
+          -54.03,
+          10.14,
+          17.21
+        ],
+        "positive_average_potential": 22.47,
+        "price": 174.04,
+        "target_high_potential": {
+          "percentage": 46.52,
+          "target_high": 255.0
+        },
+        "target_low_potential": {
+          "percentage": -54.03,
+          "target_low": 80.0
+        },
+        "target_mean_potential": {
+          "percentage": 10.14,
+          "target_mean": 191.68
+        },
+        "target_median_potential": {
+          "percentage": 17.21,
+          "target_median": 204.0
+        }
+      },
+      "ticker": "PLTR"
+    },
+    {
+      "accounts": [
+        "Avanza",
+        "Montrose"
+      ],
+      "buy_sell_signals": {
+        "buy_points": 0,
+        "buy_points_calculated": [
+        ],
+        "neutral_or_missing_data": [
+          [
+            "RSI 14 neutral",
+            48.56
+          ],
+          [
+            "SMA 225 diff neutral",
+            48.56
+          ]
+        ],
+        "sell_points": 1,
+        "sell_points_calculated": [
+          [
+            "Fear \u0026 Greed Index Sell 1",
+            64.97
+          ]
+        ]
+      },
+      "holding_value_percentage": 29.57,
+      "holding_value_sek": 682480,
+      "industry": "Electrical Equipment \u0026 Parts",
+      "quantity": 760,
+      "sector": "Industrials",
+      "stock_price_potential": {
+        "all_time_high_potential": {
+          "all_time_high": 1150.0,
+          "percentage": 28.06
+        },
+        "average_potential": 31.77,
+        "fifty_two_week_high_potential": {
+          "fifty_two_week_high": 1150.0,
+          "percentage": 28.06
+        },
+        "percentage_list": [
+          28.06,
+          28.06,
+          33.63,
+          33.63,
+          33.63,
+          33.63
+        ],
+        "positive_average_potential": 28.06,
+        "price": 898.0,
+        "target_high_potential": {
+          "percentage": 33.63,
+          "target_high": 1200.0
+        },
+        "target_low_potential": {
+          "percentage": 33.63,
+          "target_low": 1200.0
+        },
+        "target_mean_potential": {
+          "percentage": 33.63,
+          "target_mean": 1200.0
+        },
+        "target_median_potential": {
+          "percentage": 33.63,
+          "target_median": 1200.0
+        }
+      },
+      "ticker": "PLEJD.ST"
+    },
+    {
+      "accounts": [
+        "Avanza"
+      ],
+      "buy_sell_signals": {
+        "buy_points": 0,
+        "buy_points_calculated": [
+        ],
+        "neutral_or_missing_data": [
+          [
+            "RSI 14 neutral",
+            56.3
+          ]
+        ],
+        "sell_points": 3,
+        "sell_points_calculated": [
+          [
+            "Fear \u0026 Greed Index Sell 1",
+            64.97
+          ],
+          [
+            "SMA 225 diff sell 2",
+            56.3
+          ]
+        ]
+      },
+      "holding_value_percentage": 18.04,
+      "holding_value_sek": 416330,
+      "industry": "Semiconductors",
+      "quantity": 45,
+      "sector": "Technology",
+      "stock_price_potential": {
+        "all_time_high_potential": {
+          "all_time_high": 1255.0,
+          "percentage": 29.16
+        },
+        "average_potential": 39.33,
+        "fifty_two_week_high_potential": {
+          "fifty_two_week_high": 1255.0,
+          "percentage": 29.16
+        },
+        "percentage_list": [
+          29.16,
+          29.16,
+          126.42,
+          -62.85,
+          54.58,
+          59.52
+        ],
+        "positive_average_potential": 59.77,
+        "price": 971.66,
+        "target_high_potential": {
+          "percentage": 126.42,
+          "target_high": 2200.0
+        },
+        "target_low_potential": {
+          "percentage": -62.85,
+          "target_low": 361.0
+        },
+        "target_mean_potential": {
+          "percentage": 54.58,
+          "target_mean": 1501.9767
+        },
+        "target_median_potential": {
+          "percentage": 59.52,
+          "target_median": 1550.0
+        }
+      },
+      "ticker": "MU"
+    },
+    {
+      "accounts": [
+        "Avanza"
+      ],
+      "buy_sell_signals": {
+        "buy_points": 0,
+        "buy_points_calculated": [
+        ],
+        "neutral_or_missing_data": [
+          [
+            "RSI 14 neutral",
+            57.0
+          ]
+        ],
+        "sell_points": 3,
+        "sell_points_calculated": [
+          [
+            "Fear \u0026 Greed Index Sell 1",
+            64.97
+          ],
+          [
+            "SMA 225 diff sell 2",
+            57.0
+          ]
+        ]
+      },
+      "holding_value_percentage": 8.13,
+      "holding_value_sek": 187512,
+      "industry": "Computer Hardware",
+      "quantity": 12,
+      "sector": "Technology",
+      "stock_price_potential": {
+        "all_time_high_potential": {
+          "all_time_high": 2354.39,
+          "percentage": 43.46
+        },
+        "average_potential": 29.61,
+        "fifty_two_week_high_potential": {
+          "fifty_two_week_high": 2354.39,
+          "percentage": 43.46
+        },
+        "percentage_list": [
+          43.46,
+          43.46,
+          82.8,
+          -39.07,
+          25.13,
+          21.87
+        ],
+        "positive_average_potential": 43.34,
+        "price": 1641.11,
+        "target_high_potential": {
+          "percentage": 82.8,
+          "target_high": 3000.0
+        },
+        "target_low_potential": {
+          "percentage": -39.07,
+          "target_low": 1000.0
+        },
+        "target_mean_potential": {
+          "percentage": 25.13,
+          "target_mean": 2053.5
+        },
+        "target_median_potential": {
+          "percentage": 21.87,
+          "target_median": 2000.0
+        }
+      },
+      "ticker": "SNDK"
+    },
+    {
+      "accounts": [
+        "Avanza"
+      ],
+      "buy_sell_signals": {
+        "buy_points": 0,
+        "buy_points_calculated": [
+        ],
+        "neutral_or_missing_data": [
+          [
+            "RSI 14 neutral",
+            51.08
+          ],
+          [
+            "SMA 225 diff neutral",
+            51.08
+          ]
+        ],
+        "sell_points": 1,
+        "sell_points_calculated": [
+          [
+            "Fear \u0026 Greed Index Sell 1",
+            64.97
+          ]
+        ]
+      },
+      "holding_value_percentage": 2.47,
+      "holding_value_sek": 56924,
+      "industry": "Electrical Equipment \u0026 Parts",
+      "quantity": 26,
+      "sector": "Industrials",
+      "stock_price_potential": {
+        "all_time_high_potential": {
+          "all_time_high": 351.28,
+          "percentage": 52.77
+        },
+        "average_potential": 26.96,
+        "fifty_two_week_high_potential": {
+          "fifty_two_week_high": 351.28,
+          "percentage": 52.77
+        },
+        "percentage_list": [
+          52.77,
+          52.77,
+          69.61,
+          -57.82,
+          18.95,
+          25.47
+        ],
+        "positive_average_potential": 43.91,
+        "price": 229.94,
+        "target_high_potential": {
+          "percentage": 69.61,
+          "target_high": 390.0
+        },
+        "target_low_potential": {
+          "percentage": -57.82,
+          "target_low": 97.0
+        },
+        "target_mean_potential": {
+          "percentage": 18.95,
+          "target_mean": 273.5077
+        },
+        "target_median_potential": {
+          "percentage": 25.47,
+          "target_median": 288.5
+        }
+      },
+      "ticker": "BE"
+    },
+    {
+      "accounts": [
+        "Avanza"
+      ],
+      "buy_sell_signals": {
+        "buy_points": 0,
+        "buy_points_calculated": [
+        ],
+        "neutral_or_missing_data": [
+          [
+            "RSI 14 neutral",
+            47.59
+          ]
+        ],
+        "sell_points": 2,
+        "sell_points_calculated": [
+          [
+            "Fear \u0026 Greed Index Sell 1",
+            64.97
+          ],
+          [
+            "SMA 225 diff sell 1",
+            47.59
+          ]
+        ]
+      },
+      "holding_value_percentage": 2.3,
+      "holding_value_sek": 53070,
+      "industry": "Electronic Components",
+      "quantity": 1618,
+      "sector": "Technology",
+      "stock_price_potential": {
+        "all_time_high_potential": {
+          "all_time_high": 75.0,
+          "percentage": 128.66
+        },
+        "average_potential": 128.66,
+        "fifty_two_week_high_potential": {
+          "fifty_two_week_high": 75.0,
+          "percentage": 128.66
+        },
+        "percentage_list": [
+          128.66,
+          128.66
+        ],
+        "positive_average_potential": 128.66,
+        "price": 32.8,
+        "target_high_potential": {
+          "percentage": null,
+          "target_high": null
+        },
+        "target_low_potential": {
+          "percentage": null,
+          "target_low": null
+        },
+        "target_mean_potential": {
+          "percentage": null,
+          "target_mean": null
+        },
+        "target_median_potential": {
+          "percentage": null,
+          "target_median": null
+        }
+      },
+      "ticker": "SHT-B.ST"
+    }
+  ],
+  "industry_percentage": [
+    {
+      "industry": "Software - Infrastructure",
+      "percentage": 39.49,
+      "tickers": [
+        "PLTR"
+      ],
+      "value_sek": 911428
+    },
+    {
+      "industry": "Electrical Equipment \u0026 Parts",
+      "percentage": 32.04,
+      "tickers": [
+        "BE",
+        "PLEJD.ST"
+      ],
+      "value_sek": 739404
+    },
+    {
+      "industry": "Semiconductors",
+      "percentage": 18.04,
+      "tickers": [
+        "MU"
+      ],
+      "value_sek": 416330
+    },
+    {
+      "industry": "Computer Hardware",
+      "percentage": 8.13,
+      "tickers": [
+        "SNDK"
+      ],
+      "value_sek": 187512
+    },
+    {
+      "industry": "Electronic Components",
+      "percentage": 2.3,
+      "tickers": [
+        "SHT-B.ST"
+      ],
+      "value_sek": 53070
+    }
+  ],
+  "sector_percentage": [
+    {
+      "percentage": 67.96,
+      "sector": "Technology",
+      "tickers": [
+        "MU",
+        "PLTR",
+        "SHT-B.ST",
+        "SNDK"
+      ],
+      "value_sek": 1568340
+    },
+    {
+      "percentage": 32.04,
+      "sector": "Industrials",
+      "tickers": [
+        "BE",
+        "PLEJD.ST"
+      ],
+      "value_sek": 739404
+    }
+  ],
+  "total_value_sek": 2307744
+}

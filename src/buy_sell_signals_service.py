@@ -3,6 +3,7 @@ from hcnb_stock_data.models.stock_data import StockData
 
 
 class BuySellSignalsService:
+
     def __init__(self, hcnb_stock_data: HcnbStockData):
         self.fear_greed_data = hcnb_stock_data.get_fear_greed_index()
         self.buy_points = 0

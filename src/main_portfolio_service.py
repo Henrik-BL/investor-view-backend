@@ -4,26 +4,27 @@ from pathlib import Path
 from hcnb_stock_data.currency_service import CurrencyService
 from hcnb_stock_data.hcnb_stock_data import HcnbStockData
 
-from .extensions import hcnb_stock_data_app
+from .stock_price_potential import StockPricePotential
 from .buy_sell_signals_service import BuySellSignalsService
 
 
 class MainPortfolioService:
-    def __init__(self, hcnb_stock_data: HcnbStockData):
-        self.hcnb_stock_data = hcnb_stock_data
+
+    def __init__(self, hcnb_stock_data_c: HcnbStockData):
+        self.hcnb_stock_data_c = hcnb_stock_data_c
         self.currency_service = CurrencyService()
-        self.buy_sell_signals_service = BuySellSignalsService(self.hcnb_stock_data)
+        self.buy_sell_signals_service = BuySellSignalsService(self.hcnb_stock_data_c)
         self.portfolio_file_path = Path(__file__).resolve().parents[1] / 'portfolio_data' / 'main_portfolio.json'
 
     def get_portfolio_overview(self):
         total_value = 0
         portfolio_holding = self._load_portfolio_holdings()
-        existing_tickers = hcnb_stock_data_app.get_all_tickers()
+        existing_tickers = self.hcnb_stock_data_c.get_all_tickers()
 
         for holding in portfolio_holding:
             if holding['ticker'] not in existing_tickers:
-                self.hcnb_stock_data.get_stock_data(holding['ticker'], True)
-            stock_data = self.hcnb_stock_data.get_stock_data(holding['ticker'], False)
+                self.hcnb_stock_data_c.get_stock_data(holding['ticker'], True)
+            stock_data = self.hcnb_stock_data_c.get_stock_data(holding['ticker'], False)
             holding_value = stock_data.price * holding['quantity']
             holding_value_sek = round(self.currency_service.convert(holding_value, stock_data.currency, "SEK"))
             holding['holding_value_sek'] = holding_value_sek
@@ -31,6 +32,8 @@ class MainPortfolioService:
             holding['sector'] = stock_data.sector
             holding['industry'] = stock_data.industry
             holding['buy_sell_signals'] = self.buy_sell_signals_service.get_buy_sell_signal(stock_data)
+            stock_price_potential = StockPricePotential(stock_data)
+            holding['stock_price_potential'] = stock_price_potential.get_result()
 
         for holding in portfolio_holding:
             holding['holding_value_percentage'] = round((holding['holding_value_sek'] / total_value) * 100, 2) if total_value > 0 else 0
@@ -116,4 +119,3 @@ class MainPortfolioService:
             })
 
         return aggregated
-
