@@ -23,6 +23,7 @@ class BuySellSignalsService:
         self._set_fear_greed_points()
         self._set_rsi_14_points(stock_data)
         self._set_ma_225_points(stock_data)
+        self._set_price_change(stock_data)
 
         return {
             "buy_points": self.buy_points,
@@ -67,22 +68,39 @@ class BuySellSignalsService:
 
     def _set_ma_225_points(self, stock_data: StockData):
         diff = stock_data.sma_225_diff
-        if -50 <= diff <= -20:
+        if -40 <= diff <= -10:
             self.buy_points += 1
             label = f"SMA 225 diff buy 1"
-            self.buy_points_calculated.append([label, stock_data.rsi_14])
-        elif diff < -50:
+            self.buy_points_calculated.append([label, stock_data.sma_225_diff])
+        elif diff < -40:
             self.buy_points += 2
             label = f"SMA 225 diff buy 2"
-            self.buy_points_calculated.append([label, stock_data.rsi_14])
+            self.buy_points_calculated.append([label, stock_data.sma_225_diff])
         elif 50 <= diff < 80:
             self.sell_points += 1
             label = f"SMA 225 diff sell 1"
-            self.sell_points_calculated.append([label, stock_data.rsi_14])
+            self.sell_points_calculated.append([label, stock_data.sma_225_diff])
         elif diff >= 80:
             self.sell_points += 2
             label = f"SMA 225 diff sell 2"
-            self.sell_points_calculated.append([label, stock_data.rsi_14])
+            self.sell_points_calculated.append([label, stock_data.sma_225_diff])
         else:
             label = "SMA 225 diff neutral"
-            self.neutral_or_missing_data.append([label, stock_data.rsi_14])
+            self.neutral_or_missing_data.append([label, stock_data.sma_225_diff])
+
+    def _set_price_change(self, stock_data: StockData):
+        diff = stock_data.change
+        if -5 <= diff <= -2:
+            self.buy_points += 1
+            self.buy_points_calculated.append(["Change buy 1", diff])
+        elif diff < -5:
+            self.buy_points += 2
+            self.buy_points_calculated.append(["Change buy 2", diff])
+        elif 2 <= diff < 5:
+            self.sell_points += 1
+            self.sell_points_calculated.append(["Change sell 1", diff])
+        elif diff >= 5:
+            self.sell_points += 2
+            self.sell_points_calculated.append(["Change sell 2", diff])
+        else:
+            self.neutral_or_missing_data.append(["Change neutral", diff])
