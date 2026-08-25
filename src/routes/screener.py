@@ -52,17 +52,20 @@ def screener_list():
 @screener_bp.route('/update_data', methods=['GET', 'POST'])
 def update_data():
     requested_tickers = None
+    update_limit_hours = 1
 
     if request.method == 'POST':
         data = request.get_json(silent=True) or {}
         requested_tickers = data.get('tickers')
+        update_limit_hours = data.get('update_limit_hours', 1)
     else:
         tickers_param = request.args.get('tickers', '').strip()
+        update_limit_hours = request.args.get('update_limit_hours', 1)
         if tickers_param:
             requested_tickers = [t.strip() for t in tickers_param.split(',') if t.strip()]
 
     def event_stream():
-        hcnb_stock_data_app.update_limit_hours = 1
+        hcnb_stock_data_app.update_limit_hours = update_limit_hours
         tickers = requested_tickers if requested_tickers else hcnb_stock_data_app.get_all_tickers()
         total = len(tickers)
 

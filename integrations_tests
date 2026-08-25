@@ -7,3 +7,11 @@ Invoke-WebRequest -Uri "http://localhost:5000/api/screener/screener_list" -Metho
 $response = Invoke-WebRequest -Uri "http://localhost:5000/api/portfolio/overview" -Method GET
 
 $response.Content | ConvertFrom-Json | ConvertTo-Json -Depth 100
+
+
+// Update
+
+$response = Invoke-WebRequest -Uri "http://localhost:5000/api/screener/update_data?tickers=PLTR,AAPL,MSFT,NVDA" -Method GET -UseBasicParsing
+
+
+$response = Invoke-WebRequest -Uri "http://localhost:5000/api/screener/update_data?tickers=PLTR,AAPL,MSFT&update_limit_hours=1" -Method GET -UseBasicParsing

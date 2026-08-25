@@ -5,7 +5,6 @@ from ..extensions import hcnb_stock_data_app
 
 dividend_portfolio_bp = Blueprint('dividend_portfolio', __name__, url_prefix='/api/dividend-portfolio')
 
-
 @dividend_portfolio_bp.route('/overview', methods=['GET'])
 def dividend_portfolio_overview():
     dividend_portfolio_service = DividendPortfolioService(hcnb_stock_data_app)

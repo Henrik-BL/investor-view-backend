@@ -8,7 +8,6 @@ portfolio_bp = Blueprint('portfolio', __name__, url_prefix='/api/portfolio')
 
 PORTFOLIO_FILE_PATH = Path(__file__).resolve().parents[1] / 'portfolio_data' / 'main_portfolio.json'
 
-
 @portfolio_bp.route('/overview', methods=['GET'])
 def portfolio_overview():
     main_portfolio_service = MainPortfolioService(hcnb_stock_data_app)
