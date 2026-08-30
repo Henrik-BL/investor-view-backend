@@ -1,7 +1,7 @@
 from flask import Blueprint, jsonify
 from pathlib import Path
 
-from portfolio_candidates_service import PortfolioCandidatesService
+from ..portfolio_candidates_service import PortfolioCandidatesService
 from ..extensions import hcnb_stock_data_app
 from ..main_portfolio_service import MainPortfolioService
 

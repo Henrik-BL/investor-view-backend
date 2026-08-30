@@ -1,7 +1,7 @@
 from hcnb_stock_data.hcnb_stock_data import HcnbStockData
 
-from buy_sell_signals_service import BuySellSignalsService
-from stock_score_service import StockScoreService
+from .buy_sell_signals_service import BuySellSignalsService
+from .stock_score_service import StockScoreService
 
 
 class PortfolioCandidatesService:
