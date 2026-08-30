@@ -1,24 +1,27 @@
-import json
-
 from hcnb_stock_data.hcnb_stock_data import HcnbStockData
+from stock_score_service import StockScoreService
 
-from buy_sell_signals_service import BuySellSignalsService
-from stock_scorer import CompanyScorer
+
 
 hcnb_stock_data = HcnbStockData()
+stock_score_service = StockScoreService()
 
-# main_portfolio_service = MainPortfolioService(hcnb_stock_data)
+tickers = hcnb_stock_data.get_all_tickers()
 
-buy_sell_signals_service = BuySellSignalsService(hcnb_stock_data)
+result_list = []
+
+for ticker in tickers:
+    stock_data = hcnb_stock_data.get_stock_data(ticker, False)
+    result = stock_score_service.score_stock(stock_data)
+    result_list.append([ticker, result['score'],  result])
+
+result_list.sort(key=lambda x: x[1], reverse=True)
 
 
-stock_data = hcnb_stock_data.get_stock_data("PLTR")
+print("Ticker\tScore\tDetails")
 
-# print(json.dumps(stock_data.__dict__, indent=4))
+for result in result_list:
 
 
-company_scorer = CompanyScorer(stock_data)
-
-rev = company_scorer.score()
-
-print(rev)
+    ticker, score, details = result
+    print(f"{ticker}\t{score}")

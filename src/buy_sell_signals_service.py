@@ -11,6 +11,7 @@ class BuySellSignalsService:
         self.buy_points_calculated = []
         self.sell_points_calculated = []
         self.neutral_or_missing_data = []
+        self.points_limit = 4
 
     def get_buy_sell_signal(self, stock_data: StockData):
         self.buy_points = 0
@@ -31,6 +32,7 @@ class BuySellSignalsService:
             "buy_points_calculated": self.buy_points_calculated,
             "sell_points_calculated": self.sell_points_calculated,
             "neutral_or_missing_data": self.neutral_or_missing_data,
+            "points_limit": self.points_limit
         }
 
     def _set_fear_greed_points(self):
