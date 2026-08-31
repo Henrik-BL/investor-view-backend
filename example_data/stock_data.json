@@ -1,0 +1,286 @@
+{
+    "all_time_high":  207.52,
+    "beta":  1.563,
+    "buy_sell_signals":  {
+                             "buy_points":  0,
+                             "buy_points_calculated":  [
+
+                                                       ],
+                             "neutral_or_missing_data":  [
+                                                             [
+                                                                 "Fear \u0026 Greed Index",
+                                                                 "Neutral",
+                                                                 1,
+                                                                 54.43
+                                                             ],
+                                                             [
+                                                                 "RSI 14",
+                                                                 "Neutral",
+                                                                 1,
+                                                                 69.28
+                                                             ],
+                                                             [
+                                                                 "SMA 225 diff",
+                                                                 "Neutral",
+                                                                 1,
+                                                                 20.09
+                                                             ],
+                                                             [
+                                                                 "Change",
+                                                                 "Neutral",
+                                                                 1,
+                                                                 0.19362159
+                                                             ]
+                                                         ],
+                             "points_limit":  4,
+                             "sell_points":  0,
+                             "sell_points_calculated":  [
+
+                                                        ]
+                         },
+    "change":  0.19362159,
+    "consecutive_dividend_increases":  0,
+    "currency":  "USD",
+    "current_ratio":  7.228,
+    "debt_to_equity":  2.139,
+    "dividend_yield":  null,
+    "earnings_growth":  225.0,
+    "fifty_two_week_high":  207.52,
+    "fifty_two_week_low":  106.37,
+    "five_year_dividend_cagr":  0,
+    "forward_pe":  80.49727,
+    "full_time_employees":  4401,
+    "gross_margins":  0.84796,
+    "held_percent_insiders":  0.03477,
+    "held_percent_institutions":  0.64865,
+    "industry":  "Software - Infrastructure",
+    "last_quarter_date":  "2026-06-30",
+    "last_quarter_free_cashflow":  1201613000.0,
+    "last_quarter_free_cashflow_yield":  1.07,
+    "last_quarter_margin":  54.86,
+    "last_quarter_net_income":  1061890000.0,
+    "last_quarter_pe":  105.39,
+    "last_quarter_revenue":  1935464000.0,
+    "margin_difference_yoy":  22.31,
+    "market_cap":  447665733632,
+    "name":  "Palantir Technologies Inc.",
+    "payout_ratio":  0.0,
+    "payouts":  0,
+    "pb":  45.794003,
+    "pe":  159.22223,
+    "peg":  2.49,
+    "price":  186.29,
+    "ps":  72.72093,
+    "quarterly_diluted_outstanding_shares_cagr":  0.06,
+    "quarterly_free_cashflow_cagr":  22.61,
+    "quarterly_net_income_cagr":  34.27,
+    "quarterly_outstanding_shares_cagr":  0.36,
+    "quarterly_reports":  [
+                              {
+                                  "date":  "2025-06-30",
+                                  "diluted_outstanding_shares":  2562912000,
+                                  "free_cashflow":  531617000.0,
+                                  "net_income":  326727000.0,
+                                  "net_margin":  32.55,
+                                  "outstanding_shares":  2365196000,
+                                  "revenue":  1003697000.0,
+                                  "total_debt":  237812000.0
+                              },
+                              {
+                                  "date":  "2025-09-30",
+                                  "diluted_outstanding_shares":  2567309786,
+                                  "free_cashflow":  500872000.0,
+                                  "net_income":  475599000.0,
+                                  "net_margin":  40.27,
+                                  "outstanding_shares":  2373702373,
+                                  "revenue":  1181092000.0,
+                                  "total_debt":  235436000.0
+                              },
+                              {
+                                  "date":  "2025-12-31",
+                                  "diluted_outstanding_shares":  2573497000,
+                                  "free_cashflow":  764023000.0,
+                                  "net_income":  608676000.0,
+                                  "net_margin":  43.27,
+                                  "outstanding_shares":  2386904000,
+                                  "revenue":  1406802000.0,
+                                  "total_debt":  229338000.0
+                              },
+                              {
+                                  "date":  "2026-03-31",
+                                  "diluted_outstanding_shares":  2570924000,
+                                  "free_cashflow":  891764000.0,
+                                  "net_income":  870527000.0,
+                                  "net_margin":  53.32,
+                                  "outstanding_shares":  2393869000,
+                                  "revenue":  1632583000.0,
+                                  "total_debt":  211977000.0
+                              },
+                              {
+                                  "date":  "2026-06-30",
+                                  "diluted_outstanding_shares":  2568694000,
+                                  "free_cashflow":  1201613000.0,
+                                  "net_income":  1061890000.0,
+                                  "net_margin":  54.86,
+                                  "outstanding_shares":  2399820000,
+                                  "revenue":  1935464000.0,
+                                  "total_debt":  211400000.0
+                              }
+                          ],
+    "quarterly_revenue_cagr":  17.84,
+    "quarterly_total_debt_cagr":  -2.9,
+    "recommendation_mean":  1.8125,
+    "revenue_growth":  92.8,
+    "rsi_14":  69.28,
+    "sector":  "Technology",
+    "short_percent_of_float":  0.0318,
+    "short_ratio":  1.52,
+    "sma_225":  155.12,
+    "sma_225_diff":  20.09,
+    "stock_score":  {
+                        "max_points":  37,
+                        "points":  32,
+                        "score":  8.65,
+                        "score_list":  [
+                                           [
+                                               "Revenue Growth",
+                                               92.8,
+                                               3,
+                                               3
+                                           ],
+                                           [
+                                               "Quarterly Revenue CAGR",
+                                               17.84,
+                                               3,
+                                               3
+                                           ],
+                                           [
+                                               "Yearly Revenue CAGR",
+                                               32.92,
+                                               3,
+                                               3
+                                           ],
+                                           [
+                                               "Earnings Growth",
+                                               225.0,
+                                               3,
+                                               3
+                                           ],
+                                           [
+                                               "Quarterly Net Income CAGR",
+                                               34.27,
+                                               3,
+                                               3
+                                           ],
+                                           [
+                                               "Yearly Net Income CAGR",
+                                               null,
+                                               0,
+                                               3
+                                           ],
+                                           [
+                                               "Quarterly Free Cash Flow CAGR",
+                                               22.61,
+                                               3,
+                                               3
+                                           ],
+                                           [
+                                               "Yearly Free Cash Flow CAGR",
+                                               125.29,
+                                               3,
+                                               3
+                                           ],
+                                           [
+                                               "Current Ratio",
+                                               7.228,
+                                               3,
+                                               3
+                                           ],
+                                           [
+                                               "Debt to Equity",
+                                               2.139,
+                                               3,
+                                               3
+                                           ],
+                                           [
+                                               "Last Quarter Margin",
+                                               54.86,
+                                               3,
+                                               3
+                                           ],
+                                           [
+                                               "Margin Difference YoY",
+                                               22.31,
+                                               2,
+                                               2
+                                           ],
+                                           [
+                                               "Yearly Outstanding Shares CAGR",
+                                               4.76,
+                                               0,
+                                               1
+                                           ],
+                                           [
+                                               "Yearly Diluted Outstanding Shares CAGR",
+                                               7.57,
+                                               0,
+                                               1
+                                           ]
+                                       ]
+                    },
+    "target_high_price":  255.0,
+    "target_low_price":  80.0,
+    "target_mean_price":  191.68,
+    "target_median_price":  204.0,
+    "ten_year_dividend_cagr":  0,
+    "ticker":  "PLTR",
+    "updated_at":  "2026-08-30 23:07:39",
+    "yearly_diluted_outstanding_shares_cagr":  7.57,
+    "yearly_free_cashflow_cagr":  125.29,
+    "yearly_net_income_cagr":  null,
+    "yearly_outstanding_shares_cagr":  4.76,
+    "yearly_reports":  [
+                           {
+                               "date":  "2022-12-31",
+                               "diluted_outstanding_shares":  2060785103,
+                               "free_cashflow":  183710000.0,
+                               "net_income":  -373705000.0,
+                               "net_margin":  -19.608095196369536,
+                               "outstanding_shares":  2060785103,
+                               "revenue":  1905871000.0,
+                               "total_debt":  249404000.0
+                           },
+                           {
+                               "date":  "2023-12-31",
+                               "diluted_outstanding_shares":  2294577862,
+                               "free_cashflow":  697069000.0,
+                               "net_income":  209825000.0,
+                               "net_margin":  9.430286218681069,
+                               "outstanding_shares":  2144316182,
+                               "revenue":  2225012000.0,
+                               "total_debt":  229392000.0
+                           },
+                           {
+                               "date":  "2024-12-31",
+                               "diluted_outstanding_shares":  2447246030,
+                               "free_cashflow":  1141231000.0,
+                               "net_income":  462190000.0,
+                               "net_margin":  16.129431894600152,
+                               "outstanding_shares":  2246883476,
+                               "revenue":  2865507000.0,
+                               "total_debt":  239219000.0
+                           },
+                           {
+                               "date":  "2025-12-31",
+                               "diluted_outstanding_shares":  2565197000,
+                               "free_cashflow":  2100591000.0,
+                               "net_income":  1625033000.0,
+                               "net_margin":  36.30996776634105,
+                               "outstanding_shares":  2369612000,
+                               "revenue":  4475446000.0,
+                               "total_debt":  229338000.0
+                           }
+                       ],
+    "yearly_revenue_cagr":  32.92,
+    "yearly_total_debt_cagr":  -2.76
+}

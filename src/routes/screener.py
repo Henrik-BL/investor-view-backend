@@ -2,6 +2,7 @@ from flask import Blueprint
 from flask import request, jsonify, Response
 import json
 
+from stock_score_service import StockScoreService
 from ..buy_sell_signals_service import BuySellSignalsService
 from ..extensions import hcnb_stock_data_app
 
@@ -141,4 +142,8 @@ def fetch_stock_data():
     json_response = stock_data.__dict__
     buy_sell_signals = BuySellSignalsService(hcnb_stock_data_app)
     json_response['buy_sell_signals'] = buy_sell_signals.get_buy_sell_signal(stock_data)
+
+    stock_score_service = StockScoreService()
+    json_response['stock_score'] = stock_score_service.score_stock(stock_data)
+
     return jsonify(json_response), 200

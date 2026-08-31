@@ -4,6 +4,11 @@ Invoke-WebRequest -Uri "http://localhost:5000/api/screener/add_ticker" -Method P
 
 Invoke-WebRequest -Uri "http://localhost:5000/api/screener/screener_list" -Method GET
 
+
+Invoke-WebRequest -Uri "http://localhost:5000/api/stocks/PLTR" -Method GET
+
+stocks/PLTR
+
 $response = Invoke-WebRequest -Uri "http://localhost:5000/api/portfolio/overview" -Method GET
 
 $response.Content | ConvertFrom-Json | ConvertTo-Json -Depth 100
@@ -17,5 +22,10 @@ $response = Invoke-WebRequest -Uri "http://localhost:5000/api/screener/update_da
 
 
 $response = Invoke-WebRequest -Uri "http://localhost:5000/api/portfolio/candidates" -Method GET
+
+$response.Content | ConvertFrom-Json | ConvertTo-Json -Depth 100
+
+
+$response = Invoke-WebRequest -Uri "http://localhost:5000/api/screener/fetch_stock_data?ticker=PLTR" -Method GET
 
 $response.Content | ConvertFrom-Json | ConvertTo-Json -Depth 100
