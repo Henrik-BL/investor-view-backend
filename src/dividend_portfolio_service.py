@@ -1,4 +1,5 @@
 import json
+from numbers import Real
 from pathlib import Path
 
 from hcnb_stock_data.currency_service import CurrencyService
@@ -140,8 +141,14 @@ class DividendPortfolioService:
 
     @staticmethod
     def _get_yearly_dividend_amount_sek(holding: dict) -> float:
-        dividend_multiplier = holding['dividend_yield'] / 100
-        dividend_yearly_amount_sek = round(holding['holding_value_sek'] * dividend_multiplier)
+        dividend_yield = holding.get('dividend_yield')
+        holding_value_sek = holding.get('holding_value_sek')
+
+        if not isinstance(dividend_yield, Real) or not isinstance(holding_value_sek, Real):
+            return 0
+
+        dividend_multiplier = float(dividend_yield) / 100
+        dividend_yearly_amount_sek = round(float(holding_value_sek) * dividend_multiplier)
         return dividend_yearly_amount_sek
 
     @staticmethod

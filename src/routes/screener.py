@@ -2,7 +2,7 @@ from flask import Blueprint
 from flask import request, jsonify, Response
 import json
 
-from stock_score_service import StockScoreService
+from ..stock_score_service import StockScoreService
 from ..buy_sell_signals_service import BuySellSignalsService
 from ..extensions import hcnb_stock_data_app
 

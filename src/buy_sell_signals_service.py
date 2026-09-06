@@ -11,7 +11,7 @@ class BuySellSignalsService:
         self.buy_points_calculated = []
         self.sell_points_calculated = []
         self.neutral_or_missing_data = []
-        self.points_limit = 4
+        self.points_limit = 5
 
     def get_buy_sell_signal(self, stock_data: StockData):
         self.buy_points = 0
@@ -23,6 +23,7 @@ class BuySellSignalsService:
 
         self._set_fear_greed_points()
         self._set_rsi_14_points(stock_data)
+        self._set_ma_50_points(stock_data)
         self._set_ma_225_points(stock_data)
         self._set_price_change(stock_data)
 
@@ -66,6 +67,17 @@ class BuySellSignalsService:
             self.sell_points_calculated.append(["RSI 14", "Sell", val, stock_data.rsi_14])
         else:
             self.neutral_or_missing_data.append(["RSI 14", "Neutral", 1, stock_data.rsi_14])
+
+    def _set_ma_50_points(self, stock_data: StockData):
+        diff = stock_data.sma_50_diff
+        if diff < -10:
+            self.buy_points += 1
+            self.buy_points_calculated.append(["SMA 50 diff", "Buy", 1, diff])
+        elif diff >= 10:
+            self.sell_points += 1
+            self.sell_points_calculated.append(["SMA 50 diff", "Sell", 1, diff])
+        else:
+            self.neutral_or_missing_data.append(["SMA 50 diff", "Neutral", 1, diff])
 
     def _set_ma_225_points(self, stock_data: StockData):
         diff = stock_data.sma_225_diff

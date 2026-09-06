@@ -1,6 +1,3 @@
-import json
-
-from hcnb_stock_data.hcnb_stock_data import HcnbStockData
 from hcnb_stock_data.models.stock_data import StockData
 
 

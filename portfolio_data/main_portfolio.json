@@ -1,44 +1,138 @@
-{
-  "holdings": [
-    {
-      "ticker": "PLEJD.ST",
-      "quantity": 728,
-      "account": "Avanza"
-    },
-    {
-      "ticker": "BE",
-      "quantity": 26,
-      "account": "Avanza"
-    },
-    {
-      "ticker": "PLTR",
-      "quantity": 536,
-      "account": "Avanza"
-    },
-    {
-      "ticker": "MU",
-      "quantity": 45,
-      "account": "Avanza"
-    },
-    {
-      "ticker": "SNDK",
-      "quantity": 12,
-      "account": "Avanza"
-    },
-    {
-      "ticker": "SHT-B.ST",
-      "quantity": 1618,
-      "account": "Avanza"
-    },
-    {
-      "ticker": "PLEJD.ST",
-      "quantity": 32,
-      "account": "Montrose"
-    },
-    {
-      "ticker": "PLTR",
-      "quantity": 14,
-      "account": "Montrose"
-    }
-  ]
-}
+[
+  'AAK.ST',
+  {
+    'max_points': 37,
+    'points': 10,
+    'score': 2.7,
+    'score_list': [
+      [
+        'Revenue Growth',
+        -0.9,
+        0,
+        3
+      ],
+      [
+        'Quarterly Revenue CAGR',
+        -1.18,
+        0,
+        3
+      ],
+      [
+        'Yearly Revenue CAGR',
+        -3.0,
+        0,
+        3
+      ],
+      [
+        'Earnings Growth',
+        25.3,
+        2,
+        3
+      ],
+      [
+        'Quarterly Net Income CAGR',
+        -3.68,
+        0,
+        3
+      ],
+      [
+        'Yearly Net Income CAGR',
+        24.66,
+        3,
+        3
+      ],
+      [
+        'Quarterly Free Cash Flow CAGR',
+        None,
+        0,
+        3
+      ],
+      [
+        'Yearly Free Cash Flow CAGR',
+        None,
+        0,
+        3
+      ],
+      [
+        'Current Ratio',
+        2.067,
+        2,
+        3
+      ],
+      [
+        'Debt to Equity',
+        28.46,
+        2,
+        3
+      ],
+      [
+        'Last Quarter Margin',
+        7.17,
+        1,
+        3
+      ],
+      [
+        'Margin Difference YoY',
+        -0.78,
+        0,
+        2
+      ],
+      [
+        'Yearly Outstanding Shares CAGR',
+        0.1,
+        0,
+        1
+      ],
+      [
+        'Yearly Diluted Outstanding Shares CAGR',
+        0.22,
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    'buy_points': 2,
+    'buy_points_calculated': [
+      [
+        'Fear & Greed Index',
+        'Buy',
+        1,
+        41.86
+      ],
+      [
+        'SMA 225 diff',
+        'Buy',
+        1,
+        -14.46
+      ]
+    ],
+    'neutral_or_missing_data': [
+      [
+        'RSI 14',
+        'Neutral',
+        1,
+        60.25
+      ],
+      [
+        'SMA 50 diff',
+        'Neutral',
+        1,
+        -1.45
+      ],
+      [
+        'Change',
+        'Neutral',
+        1,
+        1.368518
+      ]
+    ],
+    'points_limit': 5,
+    'sell_points': 0,
+    'sell_points_calculated': []
+  },
+  {
+    'future_4_quarters': 17.62,
+    'future_8_quarters': 18.48
+  }
+]
