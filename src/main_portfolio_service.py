@@ -1,4 +1,6 @@
 import json
+import ast
+import logging
 from pathlib import Path
 
 from hcnb_stock_data.currency_service import CurrencyService
@@ -6,6 +8,8 @@ from hcnb_stock_data.hcnb_stock_data import HcnbStockData
 
 from .stock_price_potential import StockPricePotential
 from .buy_sell_signals_service import BuySellSignalsService
+
+_logger = logging.getLogger(__name__)
 
 
 class MainPortfolioService:
@@ -86,8 +90,56 @@ class MainPortfolioService:
         if not self.portfolio_file_path.exists():
             return []
         with self.portfolio_file_path.open('r', encoding='utf-8') as f:
-            data = json.load(f)
-        holdings = data.get('holdings', []) if isinstance(data, dict) else []
+            raw_content = f.read()
+
+        if not raw_content.strip():
+            return []
+
+        data = None
+        try:
+            data = json.loads(raw_content)
+        except json.JSONDecodeError:
+            try:
+                # Backward compatibility for legacy portfolio files written as Python literals.
+                data = ast.literal_eval(raw_content)
+            except (ValueError, SyntaxError):
+                _logger.exception("Failed to parse portfolio file: %s", self.portfolio_file_path)
+                return []
+
+        holdings = []
+        if isinstance(data, dict):
+            raw_holdings = data.get('holdings', [])
+            if isinstance(raw_holdings, list):
+                holdings = raw_holdings
+        elif isinstance(data, list):
+            normalized_holdings = []
+            ignored_entries = 0
+
+            for item in data:
+                if isinstance(item, str):
+                    ticker = item.strip()
+                    if ticker:
+                        normalized_holdings.append({
+                            "ticker": ticker,
+                            "quantity": 1,
+                            "account": "",
+                        })
+                    continue
+
+                if isinstance(item, dict) and item.get('ticker'):
+                    normalized_holdings.append(item)
+                else:
+                    ignored_entries += 1
+
+            if ignored_entries:
+                _logger.warning(
+                    "Ignored %d unsupported portfolio entries in %s",
+                    ignored_entries,
+                    self.portfolio_file_path,
+                )
+
+            holdings = normalized_holdings
+
         aggregated_holdings = self._get_aggregated_holdings(holdings)
         return aggregated_holdings
 
@@ -109,7 +161,7 @@ class MainPortfolioService:
             for holding in holdings:
                 holding_ticker = str(holding.get('ticker', '')).strip()
                 if holding_ticker == ticker:
-                    quantity += holding.get('quantity', 0)
+                    quantity += MainPortfolioService._coerce_quantity(holding.get('quantity'))
                     accounts.append(holding.get('account', ''))
 
             aggregated.append({
@@ -119,3 +171,14 @@ class MainPortfolioService:
             })
 
         return aggregated
+
+    @staticmethod
+    def _coerce_quantity(raw_quantity) -> float:
+        if raw_quantity is None:
+            return 0
+        if isinstance(raw_quantity, (int, float)):
+            return raw_quantity
+        try:
+            return float(raw_quantity)
+        except (TypeError, ValueError):
+            return 0
