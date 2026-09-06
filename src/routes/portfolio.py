@@ -19,5 +19,4 @@ def portfolio_overview():
 def portfolio_candidates():
     portfolio_candidates_service = PortfolioCandidatesService(hcnb_stock_data_app)
     portfolio_candidates_list = portfolio_candidates_service.get_main_portfolio_candidates()
-
     return jsonify(portfolio_candidates_list), 200

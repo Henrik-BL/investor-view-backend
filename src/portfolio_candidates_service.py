@@ -1,6 +1,6 @@
 from hcnb_stock_data.hcnb_stock_data import HcnbStockData
 
-from future_valuation_service import FutureValuationService
+from .future_valuation_service import FutureValuationService
 from .buy_sell_signals_service import BuySellSignalsService
 from .stock_score_service import StockScoreService
 
