@@ -26,6 +26,11 @@
       "account": "Avanza"
     },
     {
+      "ticker": "HACK.ST",
+      "quantity": 812,
+      "account": "Avanza"
+    },
+    {
       "ticker": "PLEJD.ST",
       "quantity": 32,
       "account": "Montrose"
